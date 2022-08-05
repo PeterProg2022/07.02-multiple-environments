@@ -104,33 +104,33 @@ async function connectToDb() {
 }
 
 
-/*
-const server = new ApolloServer({
-  typeDefs: fs.readFileSync('api/schema.graphql', 'utf-8'),
-  resolvers,
-  formatError: error => {
-    console.log(error);
-    return error;
-  },
-});
 
-const app = express();
-
-server.applyMiddleware({ app, path: '/graphql' });
-
+// const server = new ApolloServer({
+//   typeDefs: fs.readFileSync('api/schema.graphql', 'utf-8'),
+//   resolvers,
+//   formatError: error => {
+//     console.log(error);
+//     return error;
+//   },
+// });
+//
+// const app = express();
+//
+// server.applyMiddleware({ app, path: '/graphql' });
+//
 const port = process.env.API_SERVER_PORT || 3000;
+//
+// (async function () {
+//   try {
+//     await connectToDb();
+//     app.listen(port, function () {
+//       console.log(`API server started on port ${port}`);
+//     });
+//   } catch (err) {
+//     console.log('ERROR:', err);
+//   }
+// })();
 
-(async function () {
-  try {
-    await connectToDb();
-    app.listen(port, function () {
-      console.log(`API server started on port ${port}`);
-    });
-  } catch (err) {
-    console.log('ERROR:', err);
-  }
-})();
-*/
 
 async function startApolloServer(app, httpServer) {
 
@@ -149,8 +149,8 @@ async function startApolloServer(app, httpServer) {
       await server.start();
       server.applyMiddleware({app});
     //await new Promise<void>(resolve => httpServer.listen({ port: 4000 }, resolve));
-      await new Promise(resolve => httpServer.listen({ port: 4000 }, resolve));
-      console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
+      await new Promise(resolve => httpServer.listen({ port: port }, resolve));
+      console.log(`Server ready at http://localhost:${port}${server.graphqlPath}`);
   } catch (err)                   { console.log('ERROR:', err); }
 }
 
