@@ -103,7 +103,7 @@ async function graphQLFetch(query, variables = {}) {
     return result.data;
   } catch (e) {
     alert(`Error in sending data to server: ${e.message}`);
-        alert(window.ENV.UI_API_ENDPOINT)
+    alert(`Variable: ${window.ENV.UI_API_ENDPOINT}`)
   }
 }
 
