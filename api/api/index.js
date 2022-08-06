@@ -17,7 +17,8 @@ import http from 'http';
 import path from 'path';
 import { readFileSync } from 'fs';
 
-const url = process.env.DB_URL || 'mongodb+srv://issuetracker_user:2erllKuWsYj8e5Rr@cluster0.qxehy0z.mongodb.net/issue_tracker?retryWrites=true&w=majority';
+const url = process.env.DB_URL || 'mongodb://localhost/issuetracker';
+
 
 let db;
 
