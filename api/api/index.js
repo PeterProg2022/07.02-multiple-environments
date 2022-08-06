@@ -17,8 +17,7 @@ import http from 'http';
 import path from 'path';
 import { readFileSync } from 'fs';
 
-const url = process.env.DB_URL || 'mongodb://localhost/issuetracker';
-console.log('url:',url)
+const url = process.env.DB_URL || 'mongodb+srv://issuetracker_user:2erllKuWsYj8e5Rr@cluster0.qxehy0z.mongodb.net/issue_tracker?retryWrites=true&w=majority';
 
 let db;
 
@@ -118,7 +117,7 @@ async function connectToDb() {
 //
 // server.applyMiddleware({ app, path: '/graphql' });
 //
-const port = process.env.API_SERVER_PORT || 3000;
+const port = process.env.API_SERVER_PORT || 4000;
 //
 // (async function () {
 //   try {
