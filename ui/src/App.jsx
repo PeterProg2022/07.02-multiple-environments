@@ -98,6 +98,7 @@ async function graphQLFetch(query, variables = {}) {
         alert(`${error.message}:\n ${details}`);
       } else {
         alert(`${error.extensions.code}: ${error.message}`);
+        alert(window.ENV.UI_API_ENDPOINT)
       }
     }
     return result.data;
