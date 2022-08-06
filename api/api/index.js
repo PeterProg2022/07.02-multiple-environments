@@ -18,7 +18,7 @@ import path from 'path';
 import { readFileSync } from 'fs';
 
 const url = process.env.DB_URL || 'mongodb://localhost/issuetracker';
-
+console.log(url)
 
 let db;
 
@@ -135,7 +135,7 @@ const port = process.env.API_SERVER_PORT || 4000;
 async function startApolloServer(app, httpServer) {
 
   try {
-      await connectToDb();
+//       await connectToDb();
 
       const server = new ApolloServer({
           typeDefs: readFileSync( path.join(process.cwd(), 'api' , 'schema.graphql') , 'utf8'),
