@@ -98,12 +98,12 @@ async function graphQLFetch(query, variables = {}) {
         alert(`${error.message}:\n ${details}`);
       } else {
         alert(`${error.extensions.code}: ${error.message}`);
-        alert(window.ENV.UI_API_ENDPOINT)
       }
     }
     return result.data;
   } catch (e) {
     alert(`Error in sending data to server: ${e.message}`);
+        alert(window.ENV.UI_API_ENDPOINT)
   }
 }
 
